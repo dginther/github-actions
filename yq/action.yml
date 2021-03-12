@@ -1,0 +1,12 @@
+name: 'yq'
+author: 'Demian Ginther'
+description: 'Runs a yq command'
+inputs:
+  yq_command:
+   description: 'Commandline to pass to yq'
+   required: true
+runs:
+  using: 'docker'
+  image: 'docker://mikefarah/yq:4'
+  args: 
+    - ${{ inputs.yq_command }}
