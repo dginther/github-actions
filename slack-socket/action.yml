@@ -1,0 +1,27 @@
+name: 'Slack Socket'
+author: 'Demian Ginther'
+description: 'Sends a message to a slack channel using Websockets'
+inputs:
+  slack_app_token:
+    description: 'Slack App Token (xapp-xxxxxxx)'
+    required: true
+  slack_bot_token:
+    description: 'Slack Bot User Token (xoxb-xxxxxxx)'
+    required: true
+  message:
+    description: 'Message to send'
+    required: true
+  channel_id:
+    description: 'Channel ID to send to'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    SLACK_BOT_TOKEN: ${{ inputs.slack_bot_token }}
+    SLACK_APP_TOKEN: ${{ inputs.slack_app_token }}
+    MESSAGE: ${{ inputs.message }}
+    CHANNEL_ID: ${{ inputs.channel_id }}
+branding:
+  icon: 'loader'
+  color: 'green'
