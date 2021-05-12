@@ -23,5 +23,6 @@ with:
   slack_app_token: "xapp-xxxxx"
   slack_bot_token: "xoxb-xxxxx"
   message: "This is the message!"
+  blocks: "[{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]"
   channel_id: "XXXXXXX"
 ```
