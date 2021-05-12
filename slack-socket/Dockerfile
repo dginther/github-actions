@@ -1,4 +1,7 @@
-FROM public.ecr.aws/bitnami/python:3.9
+FROM python:3.9-slim-buster
+
+RUN apt-get update && \
+    apt-get upgrade
 
 COPY . .
 
