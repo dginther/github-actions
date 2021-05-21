@@ -1,7 +1,7 @@
 FROM python:3.9-slim-buster
 
-RUN apt-get update && \
-    apt-get upgrade
+RUN apt-get -y update && \
+    apt-get -y upgrade
 
 COPY . .
 
